@@ -1,4 +1,4 @@
-{% set version = '0.2.3' %}
+{% set version = '0.2.4' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/purrr_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/purrr/purrr_{{ version }}.tar.gz
-  sha256: aace6ae2f3429d0e453bfa73c02f6c5133aaff5a9cb0f860d29149ba97053e48
+  sha256: ed8d0f69d29b95c2289ae52be08a0e65f8171abb6d2587de7b57328bf3b2eb71
 
 build:
   number: 0
@@ -24,21 +24,18 @@ build:
 requirements:
   build:
     - r-base
-    - r-bh
-    - r-rcpp
-    - r-dplyr
-    - r-lazyeval >=0.2.0
     - r-magrittr >=1.5
+    - r-rlang >=0.1
+    - r-tibble
     - posix                # [win]
     - {{native}}toolchain  # [win]
     - gcc                  # [not win]
+
   run:
     - r-base
-    - r-bh
-    - r-rcpp
-    - r-dplyr
-    - r-lazyeval >=0.2.0
     - r-magrittr >=1.5
+    - r-rlang >=0.1
+    - r-tibble
     - libgcc  # [not win]
 
 test:
@@ -47,14 +44,17 @@ test:
     - "\"%R%\" -e \"library('purrr')\""  # [win]
 
 about:
-  home: https://github.com/hadley/purrr
+  home: http://purrr.tidyverse.org, https://github.com/tidyverse/purrr
   license: GPL-3
-  summary: Make your pure functions purr with the 'purrr' package. This package completes R's
-    functional programming tools with missing features present in other programming
-    languages.
+  summary: A complete and consistent functional programming toolkit for R.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
+    - cbrueffer
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
