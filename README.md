@@ -1,13 +1,13 @@
 About r-purrr
 =============
 
-Home: https://github.com/hadley/purrr
+Home: http://purrr.tidyverse.org, https://github.com/tidyverse/purrr
 
 Package license: GPL-3
 
 Feedstock license: BSD 3-Clause
 
-Summary: Make your pure functions purr with the 'purrr' package. This package completes R's functional programming tools with missing features present in other programming languages.
+Summary: A complete and consistent functional programming toolkit for R.
 
 
 
