@@ -1,4 +1,4 @@
-{% set version = '0.2.4' %}
+{% set version = '0.2.5' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/purrr_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/purrr/purrr_{{ version }}.tar.gz
-  sha256: ed8d0f69d29b95c2289ae52be08a0e65f8171abb6d2587de7b57328bf3b2eb71
+  sha256: a4a68a453f5341ae84c3e8d77b0587ed586f36eb51f64f1315750eabfe1f8535
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
