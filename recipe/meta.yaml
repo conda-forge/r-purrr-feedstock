@@ -1,5 +1,4 @@
 {% set version = '0.2.5' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +9,13 @@ package:
 source:
   fn: purrr_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/purrr_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/purrr/purrr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/purrr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/purrr/purrr_{{ version }}.tar.gz
   sha256: a4a68a453f5341ae84c3e8d77b0587ed586f36eb51f64f1315750eabfe1f8535
 
 build:
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -24,24 +23,28 @@ build:
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-magrittr >=1.5
     - r-rlang >=0.1
     - r-tibble
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-magrittr >=1.5
     - r-rlang >=0.1
     - r-tibble
 
 test:
   commands:
-    - $R -e "library('purrr')"  # [not win]
+    - $R -e "library('purrr')"           # [not win]
     - "\"%R%\" -e \"library('purrr')\""  # [win]
 
 about:
@@ -54,8 +57,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
