@@ -1,4 +1,4 @@
-{% set version = '0.3.1' %}
+{% set version = '0.3.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/purrr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/purrr/purrr_{{ version }}.tar.gz
-  sha256: c2a3c9901192efd8a04976676f84885a005db88deb1432e4750900c7b3b7883b
+  sha256: 27c74dd9e4f6f14bf442473df22bcafc068822f7f138f0870326532f143a9a31
 
 build:
   merge_build_host: True  # [win]
@@ -56,7 +56,7 @@ extra:
 
 # Package: purrr
 # Title: Functional Programming Tools
-# Version: 0.3.1
+# Version: 0.3.2
 # Authors@R: c( person("Lionel", "Henry", , "lionel@rstudio.com", c("aut", "cre")), person("Hadley", "Wickham", , "hadley@rstudio.com", "aut"), person("RStudio", role = c("cph", "fnd")) )
 # Description: A complete and consistent functional programming toolkit for R.
 # License: GPL-3 | file LICENSE
@@ -70,8 +70,8 @@ extra:
 # LazyData: true
 # RoxygenNote: 6.1.1
 # NeedsCompilation: yes
-# Packaged: 2019-02-27 21:22:32 UTC; lionel
+# Packaged: 2019-03-15 15:56:56 UTC; lionel
 # Author: Lionel Henry [aut, cre], Hadley Wickham [aut], RStudio [cph, fnd]
 # Maintainer: Lionel Henry <lionel@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2019-03-03 10:20:06 UTC
+# Date/Publication: 2019-03-15 18:20:02 UTC
