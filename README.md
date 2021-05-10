@@ -3,7 +3,7 @@ About r-purrr
 
 Home: http://purrr.tidyverse.org, https://github.com/tidyverse/purrr
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-purrr-feedstock/blob/master/LICENSE.txt)
 
