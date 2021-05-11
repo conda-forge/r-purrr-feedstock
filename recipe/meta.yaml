@@ -29,6 +29,8 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-magrittr >=1.5             # [build_platform != target_platform]
+    - r-rlang >=0.3.1              # [build_platform != target_platform]
   host:
     - r-base
     - r-magrittr >=1.5
