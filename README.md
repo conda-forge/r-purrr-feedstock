@@ -1,13 +1,17 @@
 About r-purrr
 =============
 
-Home: http://purrr.tidyverse.org, https://github.com/tidyverse/purrr
+Home: https://purrr.tidyverse.org
 
-Package license: GPL-3.0-only
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-purrr-feedstock/blob/main/LICENSE.txt)
 
 Summary: A complete and consistent functional programming toolkit for R.
+
+Development: https://github.com/tidyverse/purrr
+
+Documentation: https://purrr.tidyverse.org/reference/index.html
 
 Current build status
 ====================
