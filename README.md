@@ -3,6 +3,7 @@ About r-purrr-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-purrr-feedstock/blob/main/LICENSE.txt)
 
+
 About r-purrr
 -------------
 
@@ -15,6 +16,7 @@ Summary: A complete and consistent functional programming toolkit for R.
 Development: https://github.com/tidyverse/purrr
 
 Documentation: https://purrr.tidyverse.org/reference/index.html
+
 About r-purrr
 -------------
 
