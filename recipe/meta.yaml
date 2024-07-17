@@ -1,6 +1,5 @@
 {% set version = "1.0.2" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-purrr
@@ -13,8 +12,7 @@ source:
   sha256: 2c1bc6bb88433dff0892b41136f2f5c23573b335ff35a4775c72aa57b48bbb63
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -43,7 +43,6 @@ requirements:
     - r-vctrs >=0.5
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-cli >=3.4
     - r-lifecycle >=1.0.3
     - r-magrittr >=1.5
