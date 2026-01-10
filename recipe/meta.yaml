@@ -1,4 +1,4 @@
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/purrr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/purrr/purrr_{{ version }}.tar.gz
-  sha256: bb3f59fed9b83d9fafda75480e47c72a72d134c322ff597cb031aac871773bb3
+  sha256: b3bb91dbc67a1cc34080eae960d330626cc76585f80360524b5fceb08febf363
 
 build:
   number: 0
